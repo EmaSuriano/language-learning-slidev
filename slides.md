@@ -1,19 +1,27 @@
 ---
 theme: seriph
-background: ./assets/background.jpg
 title: Aplicación de Reinforcement Learning y Transformers para el Aprendizaje de Idiomas
 info: |
   Presentación del Trabajo Fin de Máster
   Máster Propio en Inteligencia Artificial
   Segunda Edición, Curso Académico 2024
 transition: slide-left
-class: text-left !block !text-black
-style: "background-image: url(./assets/background.jpg);"
+colorSchema: light
+layout: cover
+defaults:
+  layout: default
 ---
 
-## Mejorando el Aprendizaje de Idiomas a través de Tecnología Adaptativa
+# Mejorando el Aprendizaje de Idiomas a través de Tecnología Adaptativa
 
 Un Nuevo Enfoque para la Adquisición de Vocabulario
+
+---
+layout: section
+---
+
+# Titulo capitulo
+
 
 ---
 
@@ -23,6 +31,29 @@ Un Nuevo Enfoque para la Adquisición de Vocabulario
 - Los estudiantes olvidan hasta el **80%** del vocabulario nuevo en pocas semanas
 - Los métodos tradicionales no abordan los patrones de aprendizaje individuales
 - Existe una creciente desconexión entre la ciencia del aprendizaje y la tecnología educativa
+
+---
+layout: fact
+---
+
+# asdklajsdkl
+
+
+
+---
+layout: two-cols
+---
+
+# Left
+
+This shows on the left
+
+::right::
+
+# Right
+
+This shows on the right
+
 
 ---
 

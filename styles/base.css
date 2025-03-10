@@ -1,0 +1,5 @@
+.slidev-layout {
+    h1 {
+        @apply text-orange-500;
+    }
+  }
