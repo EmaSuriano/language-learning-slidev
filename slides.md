@@ -36,23 +36,8 @@ layout: section
 layout: fact
 ---
 
-# asdklajsdkl
+# Un gran poder conlleva una gran responsabilidad
 
-
-
----
-layout: two-cols
----
-
-# Left
-
-This shows on the left
-
-::right::
-
-# Right
-
-This shows on the right
 
 
 ---
