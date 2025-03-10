@@ -87,7 +87,6 @@ _Los estudios muestran que las habilidades lingüísticas están entre las 5 com
 
 ## Avance de lo que Viene
 
-![Vista previa del Sistema](./assets/system-preview.png)
 
 Más allá de las tarjetas de memoria para transformar el aprendizaje de vocabulario
 
@@ -117,7 +116,6 @@ Más allá de las tarjetas de memoria para transformar el aprendizaje de vocabul
 
 ## La Brecha Tecnológica
 
-![Brecha de Aprendizaje](./assets/learning-gap.png)
 
 - La mayoría de las aplicaciones de idiomas se centran en la **gamificación** en lugar de la **ciencia del aprendizaje**
 - La participación del usuario se prioriza sobre la retención duradera
@@ -156,7 +154,6 @@ Más allá de las tarjetas de memoria para transformar el aprendizaje de vocabul
 
 ## Sistema de Aprendizaje Adaptativo
 
-![Arquitectura del Sistema](./assets/system-architecture.png)
 
 - Plataforma centrada en el usuario con interfaz intuitiva
 - Motor de IA que analiza patrones de aprendizaje individuales
@@ -234,7 +231,7 @@ Más allá de las tarjetas de memoria para transformar el aprendizaje de vocabul
 
 ## Métricas de Mejora
 
-![Gráfico de Resultados](./assets/results-graph.png)
+![Gráfico de Resultados](./assets/dashboard.png)
 
 - **75% de aumento** en retención de vocabulario a largo plazo
 - **40% de reducción** en tiempo necesario para dominar nuevos términos
