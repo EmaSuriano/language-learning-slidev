@@ -39,6 +39,25 @@ layout: fact
 # Un gran poder conlleva una gran responsabilidad
 
 
+---
+layout: recording
+
+direction: right
+
+# the image source
+image: /assets/recording/learning-progress.gif
+---
+
+# Learning progress
+
+
+---
+layout: iframe-right
+url: https://emasuriano.github.io/language-learning-client/
+---
+
+## Demo website
+
 
 ---
 
