@@ -45,7 +45,7 @@ layout: recording
 direction: right
 
 # the image source
-image: /assets/recording/learning-progress.gif
+image: /recording/learning-progress.gif
 ---
 
 # Learning progress
