@@ -1,6 +1,6 @@
 ---
 theme: seriph
-title: Aplicación de Reinforcement Learning y Transformers para el Aprendizaje de Idiomas
+title: Aplicación de RL y Transformers para el Aprendizaje de Idiomas
 info: |
   Presentación del Trabajo Fin de Máster
   Máster Propio en Inteligencia Artificial
@@ -50,13 +50,22 @@ image: /recording/learning-progress.gif
 
 # Learning progress
 
+---
+layout: recording
+
+direction: left
+
+# the image source
+image: /recording/learning-progress.gif
+---
+
+# Learning progress
+
 
 ---
-layout: iframe-right
+layout: iframe
 url: https://emasuriano.github.io/language-learning-client/
 ---
-
-## Demo website
 
 
 ---
