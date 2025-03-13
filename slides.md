@@ -843,6 +843,9 @@ Pruebas con 10 participantes durante 2 semanas
 
 # Contribuciones principales
 
+* **Framework de evaluación multidimensional**
+  * Métricas para gramática, vocabulario, fluidez y objetivos
+
 * **Modelo PPO optimizado para educación lingüística**
   * 95% de precisión en decisiones de adaptación
 
@@ -851,19 +854,6 @@ Pruebas con 10 participantes durante 2 semanas
 
 * **Pipeline optimizado de procesamiento de voz**
   * Muy baja latencia al convertir voz a texto y texto a voz
-
-----
-
-# Aportaciones metodológicas
-
-* **Framework de evaluación multidimensional**
-  * Métricas para gramática, vocabulario, fluidez y objetivos
-
-* **Metodología de generación de escenarios**
-  * Simulación de patrones reales de aprendizaje
-
-* **Diseño centrado en el estudiante**
-  * Adaptación a necesidades pedagógicas reales
 
 ----
 
