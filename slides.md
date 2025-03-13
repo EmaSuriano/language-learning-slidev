@@ -25,8 +25,7 @@ Julio Emanuel Suriano Bryk
 3. Tecnologías clave
 4. Demostración
 5. Evaluación y resultados
-6. Contribuciones y trabajo futuro
-7. Conclusiones
+6. Conclusiones
 
 
 ---
@@ -829,7 +828,8 @@ layout: two-cols
 
 # Evaluación con usuarios
 
-* Pruebas con 10 participantes durante 2 semanas
+Pruebas con 10 participantes durante 2 semanas
+
 * **Facilidad de uso**: 4.0/5
 * **Satisfacción con funcionalidades**: 3.9/5
 * **Percepción de utilidad**: 3.9/5
@@ -838,28 +838,6 @@ layout: two-cols
 ::right::
 
 ![Satisfacción de usuarios](/user-satisfaction.png)
-
-
----
-layout: two-cols
----
-
-# Fortalezas destacadas
-
-* **Diálogos adaptativos**: 4.1/5
-* **Análisis de progreso**: 4.2/5
-* **Relevancia de escenarios**: 4.2/5
-* **Adaptación al nivel**: 4.0/5
-
-::right::
-
-![Fortalezas destacadas](/strength.png)
-
----
-layout: section
----
-
-# Contribuciones y trabajo futuro
 
 ----
 
@@ -946,7 +924,7 @@ layout: fact
 class: "![&>h1]:text-6xl"
 ---
 
-# El mejor método no es gramática, ni práctica, ni inmersión, sino input comprensible.
+# "El mejor método no es gramática, ni práctica, ni inmersión, sino input *comprensible*"
 
 ## Stephen Krashen
 
