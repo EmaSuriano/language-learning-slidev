@@ -125,6 +125,48 @@ flowchart TD
 </v-click>
 
 ---
+layout: two-cols
+---
+
+# Flujo de interacción
+
+Proceso iterativo y personalizado al usuario
+
+1. Usuario selecciona situación práctica
+2. Sistema genera contexto adaptado al nivel
+3. Interacción conversacional con voz/texto
+4. Análisis de la conversación y retroalimentación
+5. Ajuste de dificultad en base a los resultados
+6. Actualización del modelo de estudiante
+
+::right::
+
+```mermaid {scale: 0.75}
+flowchart TD
+    A[Selección de situación] -->|"Inicio"| B[Generación de contexto]
+    B --> C[Interacción voz/texto]
+    C --> D[Análisis y feedback]
+    D --> E[Ajuste de dificultad]
+    E --> F[Actualización perfil]
+    F -->|"Ciclo iterativo"| A
+    
+    %% Estilo
+    classDef paso1 fill:#ffcdd2,stroke:#c62828,stroke-width:1px
+    classDef paso2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:1px
+    classDef paso3 fill:#bbdefb,stroke:#1565c0,stroke-width:1px
+    classDef paso4 fill:#e1bee7,stroke:#6a1b9a,stroke-width:1px
+    classDef paso5 fill:#ffe0b2,stroke:#ef6c00,stroke-width:1px
+    classDef paso6 fill:#b2dfdb,stroke:#00695c,stroke-width:1px
+    
+    class A paso1
+    class B paso2
+    class C paso3
+    class D paso4
+    class E paso5
+    class F paso6
+```
+
+---
 
 # Objetivos específicos
 
@@ -134,13 +176,13 @@ mindmap
     (Reinforcement Learning)
       [Optimización del aprendizaje]
       [Rutas personalizadas]
-    (LLMs y RAG)
+    (Grandes Modelos de Lenguajes)
       [Mejora de la interacción]
       [Diálogos naturales]
     (TTS y STT)
       [Habilidades completas]
       [Práctica oral]
-    (Gestión de Conocimiento)
+    (Sistema RAG)
       [Acceso contextualizado]
       [Recursos educativos]
 ```
@@ -253,7 +295,6 @@ layout: two-cols
 * Arquitectura multicapa con API REST en FastAPI
 * Servicios para gestión de usuarios, aprendizaje y evaluación
 * Integración de IA: LLM, conversión voz-texto, RAG y gestor de nivel
-* Almacenamiento dual SQL y vectorial (ChromaDB)
 * Sistema adaptativo para personalizar el aprendizaje de idiomas
 
 ::right::
@@ -387,48 +428,6 @@ flowchart TB
 ```
 
 ---
-layout: two-cols
----
-
-# Flujo de interacción
-
-Proceso iterativo y personalizado al usuario
-
-1. Usuario selecciona situación práctica
-2. Sistema genera contexto adaptado al nivel
-3. Interacción conversacional con voz/texto
-4. Análisis en tiempo real y retroalimentación
-5. Ajuste dinámico de dificultad
-6. Actualización del modelo de estudiante
-
-::right::
-
-```mermaid {scale: 0.75}
-flowchart TD
-    A[Selección de situación] -->|"Inicio"| B[Generación de contexto]
-    B --> C[Interacción voz/texto]
-    C --> D[Análisis y feedback]
-    D --> E[Ajuste de dificultad]
-    E --> F[Actualización perfil]
-    F -->|"Ciclo iterativo"| A
-    
-    %% Estilo
-    classDef paso1 fill:#ffcdd2,stroke:#c62828,stroke-width:1px
-    classDef paso2 fill:#c8e6c9,stroke:#2e7d32,stroke-width:1px
-    classDef paso3 fill:#bbdefb,stroke:#1565c0,stroke-width:1px
-    classDef paso4 fill:#e1bee7,stroke:#6a1b9a,stroke-width:1px
-    classDef paso5 fill:#ffe0b2,stroke:#ef6c00,stroke-width:1px
-    classDef paso6 fill:#b2dfdb,stroke:#00695c,stroke-width:1px
-    
-    class A paso1
-    class B paso2
-    class C paso3
-    class D paso4
-    class E paso5
-    class F paso6
-```
-
----
 layout: section
 ---
 
@@ -547,17 +546,22 @@ layout: two-cols
 
 # Modelo PPO para Ajuste Dinámico de Niveles
 
-### Gestión Adaptativa de Niveles de Aprendizaje
+Gestión Adaptativa de Niveles de Aprendizaje
 
 <br />
+
+<v-clicks>
 
 * **Propósito**: Ajustar automáticamente la dificultad del aprendizaje basándose en el rendimiento del estudiante
 * **Entorno**: 
   * Observaciones: 20 métricas (4 indicadores de rendimiento × 5 días) + nivel actual
   * Acciones: Disminuir (0), Mantener (1) o Aumentar (2) el nivel de dificultad
 
+</v-clicks>
 
 ::right::
+
+<v-click>
 
 ```mermaid { scale: 0.4}
 flowchart TB
@@ -595,6 +599,8 @@ flowchart TB
   end
 ```
 
+</v-click>
+
 ---
 layout: two-cols-header
 ---
@@ -602,6 +608,8 @@ layout: two-cols-header
 # Seguimiento del Rendimiento y Decisiones
 
 ::left::
+
+<v-click>
 
 ### Indicadores Clave de Rendimiento
 
@@ -612,7 +620,11 @@ layout: two-cols-header
 - **Fluidez**: Naturalidad de la conversación
 - **Objetivos de aprendizaje**: Cumplimiento de las metas de la situación
 
+</v-click>
+
 ::right::
+
+<v-click>
 
 ### Factores de Decisión
 
@@ -622,6 +634,9 @@ layout: two-cols-header
 - Tendencias de rendimiento (comparación de los primeros 2 vs últimos 2 días)
 - Desencadenantes basados en umbrales (ej., >85% = aumentar, <30% = disminuir)
 - Volatilidad y consistencia del rendimiento
+
+</v-click>
+
 
 
 ----
@@ -654,27 +669,31 @@ layout: two-cols-header
 
 ::left::
 
-### ¿Qué es?
+<v-click>
+
+### Usos principales
 
 <br />
 
-- Un sistema de **Generación Aumentada por Recuperación (RAG)** para ejemplos de aprendizaje de idiomas
 - Almacena y recupera frases según los niveles MCER (A1-C2)
 - Utiliza búsqueda semántica para encontrar ejemplos contextualmente relevantes
-- Ayuda a los estudiantes de idiomas a encontrar frases apropiadas para situaciones específicas
+- Permite mejorar el rendimiento de los Agentes Asistente y Evaluador
+
+</v-click>
 
 ::right::
 
+<v-click>
 
 ### Características Principales
 
 <br />
 
 - **Búsqueda Contextual**: Encuentra frases basadas en el significado, no solo en palabras clave
-- **Resultados Apropiados al Nivel**: Filtra por nivel de competencia MCER
-- **Personalizable**: Puede ampliarse con más ejemplos y categorías
-- **Construido con Herramientas de Código Abierto**: Utiliza LangChain, Chroma y Ollama
+- **Personalizable**: Filtra por nivel de competencia MCER y contexto.
+- **Escalable**: Puede ampliarse con más ejemplos y categorías
 
+</v-click>
 
 ---
 layout: two-cols
@@ -682,7 +701,7 @@ layout: two-cols
 
 # Evaluador de Lenguaje RAG
 
-### Cómo funciona
+### Funcionamiento
 
 <br />
 
@@ -700,7 +719,7 @@ flowchart TB
     U((Usuario)) --> Q[/Consulta/]
     BD[(Base de Conocimientos)] --> R
     Q --> R[Recuperador]
-    R --> G[Generador]
+    R --> G[Agente Asistente/Evaluador]
     Q --> G
     G --> A[/Respuesta/]
     A --> U
@@ -853,7 +872,7 @@ layout: section
   * Respuestas contextualmente relevantes y pedagógicas
 
 * **Pipeline optimizado de procesamiento de voz**
-  * Latencias por debajo del umbral perceptible (200ms)
+  * Muy baja latencia al convertir voz a texto y texto a voz
 
 ----
 
@@ -873,15 +892,15 @@ layout: section
 # Limitaciones actuales
 
 * **Técnicas**:
-  * STT insuficiente para acentos no nativos fuertes
-  * Tiempo de carga inicial (5-8 segundos)
+  * El poder de computación esta atada al hardware disponible
+  * No todos los idiomas cuentan con TTS
 
 * **Pedagógicas**:
   * Cobertura limitada de dominios específicos
   * Adaptación insuficiente a estilos de aprendizaje
 
 * **Validación**:
-  * Muestra reducida (n=10)
+  * Muestra de usuario reducida (n=10)
   * Período de evaluación corto (2 semanas)
 
 ----
@@ -893,12 +912,12 @@ layout: section
   * Estudio longitudinal (3-6 meses)
 
 * **Mejoras técnicas**
-  * Refinamiento del modelo PPO con datos reales
-  * Adaptación STT para acentos no nativos
+  * Contar con una versión en la nube del sistema
+  * Ampliación de lenguajes disponibles
 
 * **Expansión de funcionalidades**
   * Módulos para dominios especializados
-  * Componente social para práctica colaborativa
+  * Generación de situaciones dinámicas.
 
 ---
 layout: section
@@ -914,15 +933,24 @@ layout: section
 
 * La combinación RL + Transformers + RAG permite **superar** limitaciones de sistemas tradicionales
 
-* Los resultados preliminares muestran el potencial para transformar el aprendizaje de idiomas
+* Los resultados preliminares muestran **gran** potencial para transformar el aprendizaje de idiomas
 
-* La personalización dinámica y las interacciones naturales son clave para mejorar la experiencia educativa
+* La personalización dinámica y las interacciones naturales son clave para **mejorar** la experiencia educativa
 
-* Un paso hacia educación adaptativa, contextual y centrada en el estudiante
+* Demuestra un paso hacia educación adaptativa, contextual y **centrada en el estudiante**
 
 </v-clicks>
 
-----
+---
+layout: fact
+class: "![&>h1]:text-6xl"
+---
+
+# El mejor método no es gramática, ni práctica, ni inmersión, sino input comprensible.
+
+## Stephen Krashen
+
+---
 
 # Repositorios públicos
 
