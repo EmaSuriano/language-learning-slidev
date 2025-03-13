@@ -444,7 +444,7 @@ layout: two-cols-header
 
 <v-click>
 
-## Phi-4 
+## [Phi-4 ](https://github.com/marketplace/models/azureml/Phi-4)
 
 <br />
 
@@ -466,7 +466,7 @@ layout: two-cols-header
 
 <v-click>
 
-## Nomic Embed Text
+## [Nomic Embed Text](https://huggingface.co/nomic-ai/nomic-embed-text-v1)
 
 <br />
 
@@ -491,11 +491,13 @@ layout: two-cols-header
 
 # Procesamiento de voz
 
+Speech-to-Text / Text-to-Speech
+
 ::left::
 
 <v-click>
 
-## Faster-Whisper
+## [Faster-Whisper](https://github.com/SYSTRAN/faster-whisper)
 
 <br />
 
@@ -519,7 +521,7 @@ layout: two-cols-header
 
 <v-click>
 
-## Kokoro TTS
+## [Kokoro-TTS](https://huggingface.co/spaces/hexgrad/Kokoro-TTS)
 
 <br />
 
@@ -539,38 +541,157 @@ layout: two-cols-header
 
 </v-click>
 
+---
+layout: two-cols
+---
+
+# Modelo PPO para Ajuste Dinámico de Niveles
+
+### Gestión Adaptativa de Niveles de Aprendizaje
+
+<br />
+
+* **Propósito**: Ajustar automáticamente la dificultad del aprendizaje basándose en el rendimiento del estudiante
+* **Entorno**: 
+  * Observaciones: 20 métricas (4 indicadores de rendimiento × 5 días) + nivel actual
+  * Acciones: Disminuir (0), Mantener (1) o Aumentar (2) el nivel de dificultad
+
+
+::right::
+
+```mermaid { scale: 0.4}
+flowchart TB
+  subgraph "Entorno de Aprendizaje"
+
+    subgraph "Sesión 4"
+        D4[Gramática: 0.85]
+        E4[Vocabulario: 0.78]
+        F4[Fluidez: 0.92]
+        G4[Objetivos: 0.80]
+    end
+
+    subgraph "Sesión 3"
+        D3[Gramática: 0.85]
+        E3[Vocabulario: 0.78]
+        F3[Fluidez: 0.92]
+        G3[Objetivos: 0.80]
+    end
+
+    subgraph "Sesión 2"
+        D2[Gramática: 0.85]
+        E2[Vocabulario: 0.78]
+        F2[Fluidez: 0.92]
+        G2[Objetivos: 0.80]
+    end
+
+    subgraph "Sesión 1"
+        D1[Gramática: 0.85]
+        E1[Vocabulario: 0.78]
+        F1[Fluidez: 0.92]
+        G1[Objetivos: 0.80]
+    end
+
+      H[Nivel Actual: 3]
+  end
+```
+
+---
+layout: two-cols-header
+---
+
+# Seguimiento del Rendimiento y Decisiones
+
+::left::
+
+### Indicadores Clave de Rendimiento
+
+<br />
+
+- **Gramática**: Precisión en reglas gramaticales
+- **Vocabulario**: Riqueza léxica en base al nivel
+- **Fluidez**: Naturalidad de la conversación
+- **Objetivos de aprendizaje**: Cumplimiento de las metas de la situación
+
+::right::
+
+### Factores de Decisión
+
+<br />
+
+- Promedios de rendimiento reciente (últimos 2 días)
+- Tendencias de rendimiento (comparación de los primeros 2 vs últimos 2 días)
+- Desencadenantes basados en umbrales (ej., >85% = aumentar, <30% = disminuir)
+- Volatilidad y consistencia del rendimiento
+
+
 ----
 
-# Modelo de Aprendinzaje por Refuerzo
+# Pruebas del Modelo y Resultados
 
-[*Diagrama conceptual de PPO aplicado a educación*]
+Aprendizaje por Imitación con Escenarios
 
-* Aprendizaje por refuerzo para optimizar la experiencia educativa
-* Observación del desempeño del estudiante
-* Decisiones adaptativas sobre nivel y contenido
-* Balance entre exploración y explotación
+- **Metodología**: Combinación de aprendizaje por imitación y aprendizaje por refuerzo
+- **Entrenamiento**: 
+  - 500,000 pasos temporales con curriculum learning (complejidad progresiva)
+  - El modelo aprende de patrones ejemplares predefinidos
+  
+- **Análisis de Resultados**:
+  - Desglose de precisión por categoría de escenario
+  - Matriz de confusión para acciones esperadas vs. predichas
+  - Comparación entre decisiones humanas y del modelo
 
-----
 
-# Modelo PPO - Implementación
 
-* **Estado**: 21 dimensiones (métricas de rendimiento + nivel)
-* **Acciones**: Disminuir, mantener o aumentar nivel
-* **Recompensa**: Basada en decisiones correctas y rendimiento
-* **Entrenamiento**: 500,000 pasos con evaluación periódica
+---
 
-[*Gráfico simple de aprendizaje del modelo*]
+![alt text](/scenario_results.png)
+
+---
+layout: two-cols-header
+---
+
+# Evaluador de Lenguaje RAG
+
+::left::
+
+### ¿Qué es?
+
+<br />
+
+- Un sistema de **Generación Aumentada por Recuperación (RAG)** para ejemplos de aprendizaje de idiomas
+- Almacena y recupera frases según los niveles MCER (A1-C2)
+- Utiliza búsqueda semántica para encontrar ejemplos contextualmente relevantes
+- Ayuda a los estudiantes de idiomas a encontrar frases apropiadas para situaciones específicas
+
+::right::
+
+
+### Características Principales
+
+<br />
+
+- **Búsqueda Contextual**: Encuentra frases basadas en el significado, no solo en palabras clave
+- **Resultados Apropiados al Nivel**: Filtra por nivel de competencia MCER
+- **Personalizable**: Puede ampliarse con más ejemplos y categorías
+- **Construido con Herramientas de Código Abierto**: Utiliza LangChain, Chroma y Ollama
+
 
 ---
 layout: two-cols
 ---
 
-# Sistema RAG
+# Evaluador de Lenguaje RAG
 
-1. **Vectorización** de consulta y documentos
-2. **Recuperación** de contenido relevante
-3. **Generación** de respuestas contextualizadas
-4. **Integración** con el nivel del estudiante
+### Cómo funciona
+
+<br />
+
+1. **Generación de Embeddings**: Utiliza el modelo `nomic-embed-text` de Ollama para crear embeddings vectoriales
+2. **Almacenamiento Vectorial**: Guarda ejemplos en la base de datos vectorial Chroma con metadatos
+3. **Recuperación Semántica**: Recupera ejemplos basados en:
+   - Similitud semántica con la consulta
+   - Filtrado por nivel MCER (A1-C2)
+   - Filtrado opcional por categoría
 
 ::right::
 
@@ -591,42 +712,91 @@ layout: section
 
 # Demostración
 
-----
 
-# Demo - Interfaz principal
+---
+layout: iframe
+url: https://emasuriano.github.io/language-learning-client/
+---
 
-[*Video/GIF o captura de la interfaz principal*]
+---
+layout: recording
 
-* Panel de chat interactivo
+direction: right
+
+# the image source
+image: /recording/situations.gif
+---
+
+# Selector de situaciones
+
+- Contexto donde la conversación va a tomar lugar
+- Lista de objetivos a cumplir
+- Dificultad: Baja, Media o Alta.
+
+
+---
+layout: recording
+
+direction: right
+
+# the image source
+image: /recording/user-profile.gif
+---
+
+# Perfil de estudiante
+
+* Configuración del idioma
 * Controles de voz
 * Indicadores de nivel
 * Opciones de configuración
 
-*[Punto para demostración en vivo]*
+---
+layout: recording
 
-----
+direction: right
 
-# Demo - Conversación
+# the image source
+image: /recording/conversation.gif
+---
 
-[*Video/GIF o captura de una conversación*]
+# Conversación
 
 * Ejemplo de diálogo adaptado al nivel
-* Corrección contextual de errores
 * Uso de voz para práctica oral
+* Soporte de Texto a Voz y Voz a Texto
+* Traducción a idioma materno
+* Asistente de ayuda contextual
 
-*[Continuación de demostración en vivo]*
+---
+layout: recording
 
-----
+direction: right
 
-# Demo - Análisis de progreso
+# the image source
+image: /recording/progress-record.gif
+---
 
-[*Video/GIF o captura del panel de análisis*]
+# Análisis de conversación 
 
-* Visualización de métricas de aprendizaje
-* Progreso en diferentes dimensiones lingüísticas
-* Recomendaciones personalizadas
+* Reporte de evaluación sobre la conversación
+* Obtención de métricas para el modelo RL
+* Reporte personalizado de cada métrica
 
-*[Finalización de demostración en vivo]*
+---
+layout: recording
+
+direction: right
+
+# the image source
+image: /recording/learning-progress.gif
+---
+
+# Progreso del aprendizaje
+
+* Visualización de métricas por sesiones
+* Visualización de tendencias cada 5 sesiones  
+* Progresión del nivel del estudiante por sesión
+* Posibilidad de subir/bajar nivel (opcional por el estudiante) 
 
 ---
 layout: section
@@ -634,43 +804,11 @@ layout: section
 
 # Evaluación y resultados
 
-----
-
-# Evaluación técnica - Frontend
-
-* **Síntesis de voz (TTS)**:
-  * Latencia: 50ms por frase
-  * Memoria: 120MB promedio
-  * Inicialización: 1.2 segundos
-
-* **Reconocimiento de voz (STT)**:
-  * Latencia: 100ms para frases cortas
-  * Precisión: 85% en ambiente controlado
-  * Degradación en ruido: 10-15%
-
-[*Gráfico simple de métricas*]
-
-----
-
-# Evaluación técnica - Backend
-
-* **Sistema RAG**:
-  * Latencia de búsqueda: 75ms
-  * Precisión recuperación: 82%
-  * Relevancia contextual: 80%
-
-* **Sistema PPO**:
-  * Tiempo de convergencia: 15 episodios
-  * Precisión decisiones: 95%
-  * Tiempo de inferencia: 35ms
-
-[*Gráfico simple de rendimiento*]
-
-----
+---
+layout: two-cols
+---
 
 # Evaluación con usuarios
-
-[*Gráfica de satisfacción de usuarios*]
 
 * Pruebas con 10 participantes durante 2 semanas
 * **Facilidad de uso**: 4.0/5
@@ -678,7 +816,14 @@ layout: section
 * **Percepción de utilidad**: 3.9/5
 * **Preferencia vs métodos tradicionales**: 78%
 
-----
+::right::
+
+![Satisfacción de usuarios](/user-satisfaction.png)
+
+
+---
+layout: two-cols
+---
 
 # Fortalezas destacadas
 
@@ -687,7 +832,9 @@ layout: section
 * **Relevancia de escenarios**: 4.2/5
 * **Adaptación al nivel**: 4.0/5
 
-[*Gráfico de barras con puntuaciones*]
+::right::
+
+![Fortalezas destacadas](/strength.png)
 
 ---
 layout: section
@@ -763,6 +910,8 @@ layout: section
 
 # Conclusiones
 
+<v-clicks>
+
 * La combinación RL + Transformers + RAG permite **superar** limitaciones de sistemas tradicionales
 
 * Los resultados preliminares muestran el potencial para transformar el aprendizaje de idiomas
@@ -770,6 +919,8 @@ layout: section
 * La personalización dinámica y las interacciones naturales son clave para mejorar la experiencia educativa
 
 * Un paso hacia educación adaptativa, contextual y centrada en el estudiante
+
+</v-clicks>
 
 ----
 
@@ -785,41 +936,10 @@ layout: section
 
 * **Licencia MIT**: Código abierto para la comunidad
 
-
-
 ---
 layout: fact
 ---
 
 # ¡Gracias por su atención!
-
-
----
-layout: recording
-
-direction: right
-
-# the image source
-image: /recording/learning-progress.gif
----
-
-# Learning progress
-
----
-layout: recording
-
-direction: left
-
-# the image source
-image: /recording/learning-progress.gif
----
-
-# Learning progress
-
-
----
-layout: iframe
-url: https://emasuriano.github.io/language-learning-client/
----
 
 
