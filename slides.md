@@ -899,15 +899,18 @@ layout: section
 
 <v-clicks>
 
-* La combinación RL + Transformers + RAG permite **superar** limitaciones de sistemas tradicionales
+### La combinación RL + Transformers + RAG permite **superar limitaciones** de sistemas tradicionales
 
-* Los resultados preliminares muestran **gran** potencial para transformar el aprendizaje de idiomas
+<br />
 
-* La personalización dinámica y las interacciones naturales son clave para **mejorar** la experiencia educativa
+### Los resultados preliminares muestran **gran potencial** para transformar el aprendizaje de idiomas
 
-* Demuestra un paso hacia educación adaptativa, contextual y **centrada en el estudiante**
+<br />
+
+### Demuestra un paso hacia educación adaptativa, contextual y **centrada en el estudiante**
 
 </v-clicks>
+
 
 ---
 layout: fact
