@@ -48,6 +48,7 @@ image: https://images.unsplash.com/photo-1424115087662-5845efc6b366?q=80&w=2576&
 * El aprendizaje de idiomas es un desafío global
 * Más de 1.500 millones de personas estudian un segundo idioma
 * La personalización es clave para el éxito
+* Los métodos clásicos, aunque estructurados, presentan limitaciones en la práctica real y contextualizada del idioma
 * La tecnología puede transformar esta experiencia
 
 </v-clicks>
@@ -658,7 +659,7 @@ Aprendizaje por Imitación con Escenarios
 
 ---
 
-![alt text](/scenario_results.png)
+![Pruebas de validación](./assets/scenario_results.png)
 
 ---
 layout: two-cols-header
@@ -738,11 +739,6 @@ url: https://emasuriano.github.io/language-learning-client/
 
 ---
 layout: recording
-
-direction: right
-
-# the image source
-image: /recording/situations.gif
 ---
 
 # Selector de situaciones
@@ -751,14 +747,13 @@ image: /recording/situations.gif
 - Lista de objetivos a cumplir
 - Dificultad: Baja, Media o Alta.
 
+::recording::
+
+![Selector de situaciones](./assets/recording/situations.gif)
+
 
 ---
 layout: recording
-
-direction: right
-
-# the image source
-image: /recording/user-profile.gif
 ---
 
 # Perfil de estudiante
@@ -768,13 +763,12 @@ image: /recording/user-profile.gif
 * Indicadores de nivel
 * Opciones de configuración
 
+::recording::
+
+![Perfil de estudiante](./assets/recording/user-profile.gif)
+
 ---
 layout: recording
-
-direction: right
-
-# the image source
-image: /recording/conversation.gif
 ---
 
 # Conversación
@@ -785,13 +779,12 @@ image: /recording/conversation.gif
 * Traducción a idioma materno
 * Asistente de ayuda contextual
 
+::recording::
+
+![Conversación](./assets/recording/conversation.gif)
+
 ---
 layout: recording
-
-direction: right
-
-# the image source
-image: /recording/progress-record.gif
 ---
 
 # Análisis de conversación 
@@ -800,13 +793,12 @@ image: /recording/progress-record.gif
 * Obtención de métricas para el modelo RL
 * Reporte personalizado de cada métrica
 
+::recording::
+
+![Análisis de conversación](./assets/recording/progress-record.gif)
+
 ---
 layout: recording
-
-direction: right
-
-# the image source
-image: /recording/learning-progress.gif
 ---
 
 # Progreso del aprendizaje
@@ -815,6 +807,10 @@ image: /recording/learning-progress.gif
 * Visualización de tendencias cada 5 sesiones  
 * Progresión del nivel del estudiante por sesión
 * Posibilidad de subir/bajar nivel (opcional por el estudiante) 
+
+::recording::
+
+![Progreso del aprendizaje](./assets/recording/learning-progress.gif)
 
 ---
 layout: section
@@ -837,7 +833,7 @@ Pruebas con 10 participantes durante 2 semanas
 
 ::right::
 
-![Satisfacción de usuarios](/user-satisfaction.png)
+![Satisfacción de usuarios](./assets/user-satisfaction.png)
 
 ----
 
@@ -897,7 +893,7 @@ layout: section
 
 # Conclusiones
 
-<v-clicks>
+<v-clicks every="2">
 
 ### La combinación RL + Transformers + RAG permite **superar limitaciones** de sistemas tradicionales
 
